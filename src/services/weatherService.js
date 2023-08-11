@@ -52,13 +52,13 @@ const formatForecastWeather = (data, dt) => {
 
     let { timezone } = city
 
-    const hourly = list.map((d) => {
+    const hourly = list?.map((d) => {
         return {
             title: formatToLocalTime(d.dt, timezone, 'hh:mm a'),
             temp: d.main.temp / 10,
             icon: d.weather[0].icon
         }
-    }).slice(0, 5)
+    })?.slice(0, 5)
 
     // let daily = list.map( d =>{
     //     return {
@@ -72,7 +72,7 @@ const formatForecastWeather = (data, dt) => {
     // console.log(daily);
 
     const uniqueTitles = new Set();
-    const daily = list.map((d) => {
+    const daily = list?.map((d) => {
             const title = formatToLocalTime(d.dt, timezone, 'ccc');
 
             if (uniqueTitles.has(title)) {
@@ -86,8 +86,8 @@ const formatForecastWeather = (data, dt) => {
                 };
             }
         })
-        .filter((item) => item !== null)
-        .slice(0, 5);
+        ?.filter((item) => item !== null)
+        ?.slice(0, 5);
 
 
 

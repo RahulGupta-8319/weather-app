@@ -47,7 +47,7 @@ function App() {
 
 
   return (
-    <div className={` mx-auto  w-min my-4 py-3 px-14 bg-gradient-to-br shadow-gray-950 shadow-t shadow-2xl rounded-md ${formatBackground()} `} >
+    <div className={` mx-auto  sm:w-min my-[5%] py-3 px-14 bg-gradient-to-br shadow-gray-950 shadow-t shadow-2xl rounded-md ${formatBackground()} text-center w-[93%] `} >
       <TopButton setQuery={setQuery} />
       <Input setQuery={setQuery} units={units} setUnits={setUnits} />
 
@@ -62,7 +62,7 @@ function App() {
           </div>
         )
       }
-      <ToastContainer autoClose={5000} theme='colored' newestOnTop={true} />
+      {/* <ToastContainer autoClose={5000} theme='colored' newestOnTop={true} /> */}
     </div>
   );
 }
